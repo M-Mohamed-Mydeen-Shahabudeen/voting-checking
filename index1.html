@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Check</title>
+    <style>
+        body{
+            background-color: burlywood;
+        }
+        h1{
+            text-align: center;
+        }
+        #check
+        {
+           text-align: center; 
+           width: 300px;
+           height: 25px;
+           border-radius: 13px;
+           border: solid red;
+        
+        }
+       #result
+       {
+        color: green;
+       }
+       .e
+       {
+        color: red;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+       }
+    </style>
+</head>
+<body>
+  
+    
+    <h1>Voting Eligibility Check</h1>
+    <center>
+    <label for="check" class="e">Enter age:</label>
+    <input type="number" id="check" min=0 placeholder="Check">
+    <button onclick="checkEligibility()">check Eligibility</button>
+    <h1 id="result"></h1>
+</center>
+    
+
+    <script>
+        function checkEligibility()
+        {
+            const input=document.getElementById('check').value;
+            const result=document.getElementById('result');
+
+            if(input=="")
+            {
+                result.textContent="Please enter Age"
+                result.style.color="yellow"
+            }
+            else if(input>=18)
+            {
+                result.textContent="Your eligible for voting";
+                result.style.color="Green"
+            }
+            else
+            {
+                result.textContent="You are not eligible"
+                result.style.color="Red"
+            }
+
+        }
+        
+    </script>
+
+</body>
+</html>
